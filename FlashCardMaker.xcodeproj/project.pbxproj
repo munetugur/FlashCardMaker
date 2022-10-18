@@ -8,17 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		E114B6DC28FEE5EE00D7B517 /* FlashCardMakerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114B6DB28FEE5EE00D7B517 /* FlashCardMakerApp.swift */; };
-		E114B6DE28FEE5EE00D7B517 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114B6DD28FEE5EE00D7B517 /* ContentView.swift */; };
 		E114B6E028FEE5EF00D7B517 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E114B6DF28FEE5EF00D7B517 /* Assets.xcassets */; };
 		E114B6E328FEE5EF00D7B517 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E114B6E228FEE5EF00D7B517 /* Preview Assets.xcassets */; };
+		E114B6F228FEE61C00D7B517 /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114B6EA28FEE61C00D7B517 /* PlayView.swift */; };
+		E114B6F328FEE61C00D7B517 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114B6EB28FEE61C00D7B517 /* HomeView.swift */; };
+		E114B6F428FEE61C00D7B517 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114B6EC28FEE61C00D7B517 /* LibraryView.swift */; };
+		E114B6F728FEE61C00D7B517 /* DataSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114B6F028FEE61C00D7B517 /* DataSetView.swift */; };
+		E114B6F828FEE61C00D7B517 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114B6F128FEE61C00D7B517 /* ContentView.swift */; };
+		E114B6FC28FEEC3000D7B517 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114B6FB28FEEC3000D7B517 /* SettingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E114B6D828FEE5EE00D7B517 /* FlashCardMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashCardMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E114B6DB28FEE5EE00D7B517 /* FlashCardMakerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardMakerApp.swift; sourceTree = "<group>"; };
-		E114B6DD28FEE5EE00D7B517 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E114B6DF28FEE5EF00D7B517 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E114B6E228FEE5EF00D7B517 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E114B6EA28FEE61C00D7B517 /* PlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
+		E114B6EB28FEE61C00D7B517 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E114B6EC28FEE61C00D7B517 /* LibraryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		E114B6F028FEE61C00D7B517 /* DataSetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSetView.swift; sourceTree = "<group>"; };
+		E114B6F128FEE61C00D7B517 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E114B6FB28FEEC3000D7B517 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				E114B6DB28FEE5EE00D7B517 /* FlashCardMakerApp.swift */,
-				E114B6DD28FEE5EE00D7B517 /* ContentView.swift */,
 				E114B6DF28FEE5EF00D7B517 /* Assets.xcassets */,
+				E114B6E928FEE61C00D7B517 /* Views */,
 				E114B6E128FEE5EF00D7B517 /* Preview Content */,
 			);
 			path = FlashCardMaker;
@@ -65,6 +75,19 @@
 				E114B6E228FEE5EF00D7B517 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E114B6E928FEE61C00D7B517 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E114B6F128FEE61C00D7B517 /* ContentView.swift */,
+				E114B6EB28FEE61C00D7B517 /* HomeView.swift */,
+				E114B6EA28FEE61C00D7B517 /* PlayView.swift */,
+				E114B6EC28FEE61C00D7B517 /* LibraryView.swift */,
+				E114B6FB28FEEC3000D7B517 /* SettingView.swift */,
+				E114B6F028FEE61C00D7B517 /* DataSetView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +160,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E114B6DE28FEE5EE00D7B517 /* ContentView.swift in Sources */,
+				E114B6F228FEE61C00D7B517 /* PlayView.swift in Sources */,
+				E114B6F328FEE61C00D7B517 /* HomeView.swift in Sources */,
+				E114B6F828FEE61C00D7B517 /* ContentView.swift in Sources */,
+				E114B6FC28FEEC3000D7B517 /* SettingView.swift in Sources */,
+				E114B6F728FEE61C00D7B517 /* DataSetView.swift in Sources */,
+				E114B6F428FEE61C00D7B517 /* LibraryView.swift in Sources */,
 				E114B6DC28FEE5EE00D7B517 /* FlashCardMakerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +303,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,6 +333,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
