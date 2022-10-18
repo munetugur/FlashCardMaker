@@ -14,54 +14,52 @@ struct SettingView: View {
     
     
     var body: some View {
+        
+        NavigationView{
+            VStack {
+                
+                ///ヘッダ
+                HStack {
+                    Button("close") {
+                        self.$isShow.wrappedValue.toggle()
+                        print("close処理")
 
-        VStack {
-            
-            ///ヘッダ
-            HStack {
-                Button("close") {
-                    self.$isShow.wrappedValue.toggle()
+                    }
+                    
+                    Spacer()
+                    
+                    Button("save") {
+                        self.$isShow.wrappedValue.toggle()
+                        print("save処理")
+                    }
+                }
+                .padding(.horizontal, 30)
+
+                ///ナビゲーションリンク：動画選択のためのカメラロール起動
+                NavigationLink(destination: TestView()) {
+                    Text("selectCameraRoll")
+                    .font(.body)
+                    .frame(width: 250, height: 40)
+                    .foregroundColor(Color(.white))
+                    .background(Color(UIColor.darkGray))
+                    .cornerRadius(10)
+                    .padding(.top, 30)
                 }
                 
                 Spacer()
-                
-                Button("save") {
-                    self.$isShow.wrappedValue.toggle()
-                }
             }
-            .padding(.horizontal, 30)
-            
-            Spacer()
-            
-            ///カメラロール選択ボタン
-            Button(action: {
-                              
-                            }){
-                                Text("selectCameraRoll")
-                                        //.fontWeight(.bold)
-                                        .font(.body)
-                                        .frame(width: 250, height: 40)
-                                        .foregroundColor(Color(.white))
-                                        .background(Color(UIColor.darkGray))
-                                        .cornerRadius(10)
-                            }
-            
-            Spacer()
-            
-            
+            .padding(.top, 30)
         }
-        .padding(.top, 30)
-        
-
-        
-
-        
+        .padding(.horizontal)
+        .navigationBarHidden(true)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
+
 struct Setting_Previews: PreviewProvider {
     static var previews: some View {
-        //SettingView()
-        LibraryView()
+        //SettingView(isShow: .constant(true))
+        ContentView()
     }
 }

@@ -94,7 +94,7 @@ struct FloatingButtonView: View {
                 .frame(width: 60, height: 60)
                 .background(Color.cyan)
                 .cornerRadius(30.0)
-                .shadow(color: .gray, radius: 3, x: 3, y: 3)
+                .shadow(color: .gray, radius: 1, x: 1, y: 1)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 16.0, trailing: 16.0))
             }
         }
