@@ -7,16 +7,20 @@
 
 import SwiftUI
 import PhotosUI
+import Foundation
 
 struct PhotoLibraryMoviePickerView: UIViewControllerRepresentable {
 
+    
     @Environment(\.dismiss) private var dismiss
-    @Binding var movieUrl: URL?
-
+    @Binding var movieUrl: [URL]
+   
+    
     func makeUIViewController(context: Context) -> PHPickerViewController {
         var configuration = PHPickerConfiguration()
         configuration.filter = .videos
         configuration.preferredAssetRepresentationMode = .current
+        configuration.selectionLimit = 30
         let picker = PHPickerViewController(configuration: configuration)
         picker.delegate = context.coordinator
         return picker
@@ -30,8 +34,11 @@ struct PhotoLibraryMoviePickerView: UIViewControllerRepresentable {
 
     class Coordinator: NSObject, PHPickerViewControllerDelegate {
 
-        let parent: PhotoLibraryMoviePickerView
+        var parent: PhotoLibraryMoviePickerView
 
+        //var test: [URL] = [URL]()
+        
+        
         init(_ parent: PhotoLibraryMoviePickerView) {
             self.parent = parent
         }
@@ -39,25 +46,30 @@ struct PhotoLibraryMoviePickerView: UIViewControllerRepresentable {
         func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
 
             parent.dismiss()
-
-            guard let provider = results.first?.itemProvider else {
-                return
-            }
-
-            let typeIdentifier = UTType.movie.identifier
-
-            if provider.hasItemConformingToTypeIdentifier(typeIdentifier) {
-
-                provider.loadFileRepresentation(forTypeIdentifier: typeIdentifier) { url, error in
-                    if let error = error {
-                        print("error: \(error)")
-                        return
-                    }
-                    if let url = url {
-                        let fileName = "\(Int(Date().timeIntervalSince1970)).\(url.pathExtension)"
-                        let newUrl = URL(fileURLWithPath: NSTemporaryDirectory() + fileName)
-                        try? FileManager.default.copyItem(at: url, to: newUrl)
-                        self.parent.movieUrl = newUrl
+            
+            results.forEach {
+                
+                let provider = $0.itemProvider
+                
+                ///nilならreturn
+                if provider == nil { return }
+                
+                let typeIdentifier = UTType.movie.identifier
+                
+                if provider.hasItemConformingToTypeIdentifier(typeIdentifier) {
+                    
+                    provider.loadFileRepresentation(forTypeIdentifier: typeIdentifier) { url, error in
+                        if let error = error {
+                            print("error: \(error)")
+                            return
+                        }
+                        if let url = url {
+                            let fileName = "\(Int(Date().timeIntervalSince1970)).\(url.pathExtension)"
+                            let newUrl = URL(fileURLWithPath: NSTemporaryDirectory() + fileName)
+                            try? FileManager.default.copyItem(at: url, to: newUrl)
+                            self.parent.movieUrl.append(newUrl)
+                            print(self.parent.movieUrl)
+                        }
                     }
                 }
             }

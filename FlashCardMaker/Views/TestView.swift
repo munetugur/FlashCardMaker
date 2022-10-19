@@ -2,13 +2,17 @@ import SwiftUI
 
 struct TestView: View {
 
-    @State private var movieUrl: URL?
+    @State private var movieUrl: [URL]
     @State private var showCameraMoviePickerView = false
     @State private var showPhotoLibraryMoviePickerView = false
     @State private var showMoviePlayerView = false
 
     private var canPlayVideo: Bool {
         movieUrl != nil
+    }
+    
+    init(){
+        self.movieUrl = [URL]()
     }
 
     var body: some View {
@@ -30,10 +34,10 @@ struct TestView: View {
             Button {
                 showMoviePlayerView = true
 
-                guard let url = movieUrl else {
-                    return
-                }
-                print(url)
+//                guard let url = movieUrl else {
+//                    return
+//                }
+                //print(url)
             } label: {
                 Image(systemName: "play")
                     .resizable()
@@ -52,13 +56,7 @@ struct TestView: View {
             PhotoLibraryMoviePickerView(movieUrl: $movieUrl)
         }
         .fullScreenCover(isPresented: $showMoviePlayerView) {
-            MoviePlayerView(with: movieUrl)
+            MoviePlayerView(with: movieUrl[1])
         }
-    }
-}
-
-struct TestView_Previews: PreviewProvider {
-    static var previews: some View {
-        TestView()
     }
 }
