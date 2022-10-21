@@ -19,6 +19,7 @@
 		E114B6FE28FEF41C00D7B517 /* PhotoLibraryMoviePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114B6FD28FEF41C00D7B517 /* PhotoLibraryMoviePickerView.swift */; };
 		E114B70328FEF5CB00D7B517 /* MoviePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114B70228FEF5CB00D7B517 /* MoviePlayerView.swift */; };
 		E114B70528FEF5E200D7B517 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114B70428FEF5E200D7B517 /* TestView.swift */; };
+		E114B7072902D2DB00D7B517 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114B7062902D2DB00D7B517 /* RegistrationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		E114B6FD28FEF41C00D7B517 /* PhotoLibraryMoviePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryMoviePickerView.swift; sourceTree = "<group>"; };
 		E114B70228FEF5CB00D7B517 /* MoviePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePlayerView.swift; sourceTree = "<group>"; };
 		E114B70428FEF5E200D7B517 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		E114B7062902D2DB00D7B517 /* RegistrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				E114B6EC28FEE61C00D7B517 /* LibraryView.swift */,
 				E114B6FB28FEEC3000D7B517 /* SettingView.swift */,
 				E114B6FD28FEF41C00D7B517 /* PhotoLibraryMoviePickerView.swift */,
+				E114B7062902D2DB00D7B517 /* RegistrationView.swift */,
 				E114B6F028FEE61C00D7B517 /* DataSetView.swift */,
 				E114B70228FEF5CB00D7B517 /* MoviePlayerView.swift */,
 				E114B70428FEF5E200D7B517 /* TestView.swift */,
@@ -169,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E114B7072902D2DB00D7B517 /* RegistrationView.swift in Sources */,
 				E114B6F228FEE61C00D7B517 /* PlayView.swift in Sources */,
 				E114B6F328FEE61C00D7B517 /* HomeView.swift in Sources */,
 				E114B6F828FEE61C00D7B517 /* ContentView.swift in Sources */,

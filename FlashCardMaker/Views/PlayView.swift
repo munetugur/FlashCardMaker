@@ -1,57 +1,59 @@
-//
-//  PlayView.swift
-//  RandomDealer
-//
-//  Created by MNT on 2022/09/12.
-//
 
 import SwiftUI
 
 struct PlayView: View {
+    
+    @State var isPlay: Bool = false
+    
+    
     var body: some View {
-        
-        NavigationView {
-            VStack{
-                ///ヘッダー
-                HStack{
-                    Text("PlayList")
-                        .font(.title)
-                        .fontWeight(.bold)
-                    
-                    Spacer()
-                }
-                .padding(.horizontal)
-                .padding(.vertical)
+    
+       
+        VStack {
+            Image("test")
+             
+            Spacer()
+            
+            HStack {
                 
-                ///リスト
-                ScrollView{
-                    ForEach(0..<15  , id: \.self) {_ in
-                        ListView()
-                    }
-                }
-
-                Spacer()
-            }
-        }
-    }
-}
-
-struct ListView: View {
-    var body: some View {
-        
-        Divider()
-        
-        HStack{
-            NavigationLink(destination: DataSetView()) {
-                Text("Caption")
+                Image(systemName: "backward.end")
+                    .font(.system(size: 60))
                 
                 Spacer()
+                
+                Button(
+                    action: {
+                        self.isPlay.toggle()
+                    },
+                    label: {
+                        if self.isPlay {
+                            Image(systemName: "pause")
+                                .font(.system(size: 60))
+                                .foregroundColor(.white)
+                        }
+                        else {
+                            Image(systemName: "play")
+                                .font(.system(size: 60))
+                                .foregroundColor(.white)
+                        }
+                            
+                })
+                
+                Spacer()
+                
+                Image(systemName: "forward.end")
+                    .font(.system(size: 60))
             }
+            .padding(.horizontal, 40)
+            
+            Spacer()
+            
+          
+            Text("aaaa")
         }
-        .padding(.horizontal)
-        .navigationBarHidden(true)
-        .navigationBarTitleDisplayMode(.inline)
-        .foregroundColor(.gray)
+        
+
+        
     }
 }
 
@@ -60,3 +62,4 @@ struct PlayView_Previews: PreviewProvider {
         PlayView()
     }
 }
+

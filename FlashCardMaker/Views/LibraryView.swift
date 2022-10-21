@@ -28,32 +28,35 @@ struct LibraryView: View {
                 .padding(.horizontal)
                 .padding(.vertical)
                 
-                ///リスト
-                LibraryListView()
-
-                Spacer()
-                
-                ///フローティングボタン
-                FloatingButtonView(isShow: $isSetting)
+                ZStack {
+                    ///リスト
+                    PlayListView()
+                    
+                    ///フローティングボタン
+                    FloatingButtonView(isShow: $isSetting)
+                }
             }
             .sheet(isPresented: $isSetting){
-                SettingView(isShow: $isSetting)
+                RegistrationView(isShow: $isSetting)
             }
         }
     }
 }
 
 
-struct LibraryListView: View {
+struct PlayListView: View {
+    
+
     var body: some View {
-        
+     
         ScrollView{
             ForEach(0..<15  , id: \.self) {_ in
                 Divider()
                 
                 HStack{
-                    NavigationLink(destination: DataSetView()) {
-                        Text("Caption")
+                    NavigationLink(destination: PlayView()) {
+                        
+                        PlayDataView()
                         
                         Spacer()
                     }
@@ -64,6 +67,36 @@ struct LibraryListView: View {
                 .foregroundColor(.gray)
             }
         }
+    }
+}
+
+struct PlayDataView: View {
+    
+    
+    var body: some View {
+        
+        HStack {
+            
+            ///moveのキャプチャー画像
+            Image(systemName: "gear")
+            
+            VStack {
+                
+                HStack{
+                    Text("Title........")
+                    Spacer()
+                }
+                
+                HStack{
+                    Text("Explain.----------------")
+                    Spacer()
+                }
+            }
+            
+            ///設定アイコン
+            Image(systemName: "leaf")
+        }
+        .frame(minWidth: 300,maxWidth: .infinity,minHeight: 70,maxHeight: 100)
     }
 }
 
@@ -103,6 +136,7 @@ struct FloatingButtonView: View {
 
 struct LibraryView_Previews: PreviewProvider {
     static var previews: some View {
-        LibraryView()
+            LibraryView()
     }
 }
+
