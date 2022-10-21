@@ -20,6 +20,9 @@
 		E114B70328FEF5CB00D7B517 /* MoviePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114B70228FEF5CB00D7B517 /* MoviePlayerView.swift */; };
 		E114B70528FEF5E200D7B517 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114B70428FEF5E200D7B517 /* TestView.swift */; };
 		E114B7072902D2DB00D7B517 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114B7062902D2DB00D7B517 /* RegistrationView.swift */; };
+		E114B70B2902D89E00D7B517 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114B70A2902D89E00D7B517 /* Utility.swift */; };
+		E114B70E2902DED700D7B517 /* PlayDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114B70D2902DED700D7B517 /* PlayDataModel.swift */; };
+		E114B7102902E18200D7B517 /* PlayListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114B70F2902E18200D7B517 /* PlayListModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,10 @@
 		E114B70228FEF5CB00D7B517 /* MoviePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePlayerView.swift; sourceTree = "<group>"; };
 		E114B70428FEF5E200D7B517 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		E114B7062902D2DB00D7B517 /* RegistrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		E114B7082902D6F700D7B517 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E114B70A2902D89E00D7B517 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		E114B70D2902DED700D7B517 /* PlayDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayDataModel.swift; sourceTree = "<group>"; };
+		E114B70F2902E18200D7B517 /* PlayListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +76,9 @@
 		E114B6DA28FEE5EE00D7B517 /* FlashCardMaker */ = {
 			isa = PBXGroup;
 			children = (
+				E114B70C2902DEC400D7B517 /* Models */,
+				E114B7092902D7B800D7B517 /* Common */,
+				E114B7082902D6F700D7B517 /* Info.plist */,
 				E114B6DB28FEE5EE00D7B517 /* FlashCardMakerApp.swift */,
 				E114B6DF28FEE5EF00D7B517 /* Assets.xcassets */,
 				E114B6E928FEE61C00D7B517 /* Views */,
@@ -90,9 +100,9 @@
 			children = (
 				E114B6F128FEE61C00D7B517 /* ContentView.swift */,
 				E114B6EB28FEE61C00D7B517 /* HomeView.swift */,
-				E114B6EA28FEE61C00D7B517 /* PlayView.swift */,
 				E114B6EC28FEE61C00D7B517 /* LibraryView.swift */,
 				E114B6FB28FEEC3000D7B517 /* SettingView.swift */,
+				E114B6EA28FEE61C00D7B517 /* PlayView.swift */,
 				E114B6FD28FEF41C00D7B517 /* PhotoLibraryMoviePickerView.swift */,
 				E114B7062902D2DB00D7B517 /* RegistrationView.swift */,
 				E114B6F028FEE61C00D7B517 /* DataSetView.swift */,
@@ -100,6 +110,23 @@
 				E114B70428FEF5E200D7B517 /* TestView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E114B7092902D7B800D7B517 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E114B70A2902D89E00D7B517 /* Utility.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E114B70C2902DEC400D7B517 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E114B70D2902DED700D7B517 /* PlayDataModel.swift */,
+				E114B70F2902E18200D7B517 /* PlayListModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,11 +202,14 @@
 				E114B7072902D2DB00D7B517 /* RegistrationView.swift in Sources */,
 				E114B6F228FEE61C00D7B517 /* PlayView.swift in Sources */,
 				E114B6F328FEE61C00D7B517 /* HomeView.swift in Sources */,
+				E114B70E2902DED700D7B517 /* PlayDataModel.swift in Sources */,
 				E114B6F828FEE61C00D7B517 /* ContentView.swift in Sources */,
 				E114B6FC28FEEC3000D7B517 /* SettingView.swift in Sources */,
 				E114B70328FEF5CB00D7B517 /* MoviePlayerView.swift in Sources */,
+				E114B7102902E18200D7B517 /* PlayListModel.swift in Sources */,
 				E114B6FE28FEF41C00D7B517 /* PhotoLibraryMoviePickerView.swift in Sources */,
 				E114B70528FEF5E200D7B517 /* TestView.swift in Sources */,
+				E114B70B2902D89E00D7B517 /* Utility.swift in Sources */,
 				E114B6F728FEE61C00D7B517 /* DataSetView.swift in Sources */,
 				E114B6F428FEE61C00D7B517 /* LibraryView.swift in Sources */,
 				E114B6DC28FEE5EE00D7B517 /* FlashCardMakerApp.swift in Sources */,
@@ -314,6 +344,8 @@
 				DEVELOPMENT_TEAM = M2UKNV8CT8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlashCardMaker/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -344,6 +376,8 @@
 				DEVELOPMENT_TEAM = M2UKNV8CT8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlashCardMaker/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

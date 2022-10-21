@@ -50,14 +50,9 @@ struct PhotoLibraryMoviePickerView: UIViewControllerRepresentable {
             results.forEach {
                 
                 let provider = $0.itemProvider
-                
-                ///nilならreturn
-                if provider == nil { return }
-                
                 let typeIdentifier = UTType.movie.identifier
                 
                 if provider.hasItemConformingToTypeIdentifier(typeIdentifier) {
-                    
                     provider.loadFileRepresentation(forTypeIdentifier: typeIdentifier) { url, error in
                         if let error = error {
                             print("error: \(error)")
@@ -65,7 +60,7 @@ struct PhotoLibraryMoviePickerView: UIViewControllerRepresentable {
                         }
                         if let url = url {
                             let fileName = "\(Int(Date().timeIntervalSince1970)).\(url.pathExtension)"
-                            let newUrl = URL(fileURLWithPath: NSTemporaryDirectory() + fileName)
+                            let newUrl = URL(fileURLWithPath: Utility.SAVE_URL_MOVIE + fileName)
                             try? FileManager.default.copyItem(at: url, to: newUrl)
                             self.parent.movieUrl.append(newUrl)
                             print(self.parent.movieUrl)
