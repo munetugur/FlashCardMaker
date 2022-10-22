@@ -31,6 +31,21 @@ class PlayDataModel {
     /*-                                 SUBROUTINE                                    */
     /*--------------------------------------------------------------------------------*/
     
+    public func validation() -> Bool {
+        ///全部の変数に対して入力値の正したを確認すべきだが、
+        ///今回はURLリストのnil確認のみ実施する。
+        guard let playMovieUrl = self.playMovieUrl else {
+            return false
+        }
+        
+        //少なくとも動画データを一つは登録してもらう。
+        if playMovieUrl.count == 0 {
+            return false
+        }
+        
+        return true
+    }
+    
     
     public init() {
         self.title = ""
@@ -46,21 +61,26 @@ class PlayDataModel {
     /*--------------------------------------------------------------------------------*/
     
     
-    public func getTitle() -> String {
+    public func Title() -> String {
         return self.title
     }
     
-    public func getSubTitle() -> String {
+    public func SubTitle() -> String {
         guard let subTitle = self.subTitle else { return "" }
         return subTitle
     }
     
-    public func getSpeed() -> Double {
+    public func Speed() -> Double {
         return self.speed
     }
     
-    public func getPlayMode() -> Utility.PlayModeKind {
+    public func PlayMode() -> Utility.PlayModeKind {
         return self.playMode
+    }
+    
+    public func PlayMovieUrl() -> [URL] {
+        guard let playMovieUrl = self.playMovieUrl else { return [URL]()}
+        return playMovieUrl
     }
     
     public func setTitle(title: String) {
@@ -75,7 +95,11 @@ class PlayDataModel {
         self.speed = speed
     }
     
-    public func getPlayMode(mode: Utility.PlayModeKind) {
+    public func setPlayMode(mode: Utility.PlayModeKind) {
         self.playMode = mode
+    }
+    
+    public func setPlayMovieUrl(playMovieUrl: [URL]?) {
+        self.playMovieUrl =  playMovieUrl
     }
 }

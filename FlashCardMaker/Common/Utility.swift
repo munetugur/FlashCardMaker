@@ -6,7 +6,7 @@ class Utility {
     public static let SAVE_URL_MOVIE: String = NSHomeDirectory() + "/Documents/movie/"
 
     ///再生モードの種類
-    public static enum PlayModeKind {
+    public enum PlayModeKind {
         case NOMAL
         case RANDOM
     }

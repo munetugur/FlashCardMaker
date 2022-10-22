@@ -4,7 +4,7 @@ struct TestView: View {
 
     @State private var movieUrl: [URL]
     @State private var showCameraMoviePickerView = false
-    @State private var showPhotoLibraryMoviePickerView = false
+
     @State private var showMoviePlayerView = false
 
     private var canPlayVideo: Bool {
@@ -25,11 +25,7 @@ struct TestView: View {
                 Text("Camera Movie Picker")
             }
 
-            Button {
-                showPhotoLibraryMoviePickerView = true
-            } label: {
-                Text("Photo Library Movie Picker")
-            }
+
 
             Button {
                 showMoviePlayerView = true
@@ -52,11 +48,17 @@ struct TestView: View {
         .fullScreenCover(isPresented: $showCameraMoviePickerView) {
             //CameraMoviePickerView(movieUrl: $movieUrl)
         }
-        .fullScreenCover(isPresented: $showPhotoLibraryMoviePickerView) {
-            PhotoLibraryMoviePickerView(movieUrl: $movieUrl)
-        }
+        
+
+        
         .fullScreenCover(isPresented: $showMoviePlayerView) {
             MoviePlayerView(with: movieUrl[1])
         }
+    }
+}
+
+struct Test_Previews: PreviewProvider {
+    static var previews: some View {
+        TestView()
     }
 }

@@ -13,7 +13,7 @@ struct PhotoLibraryMoviePickerView: UIViewControllerRepresentable {
 
     
     @Environment(\.dismiss) private var dismiss
-    @Binding var movieUrl: [URL]
+    @Binding var movieUrl: [URL]?
    
     
     func makeUIViewController(context: Context) -> PHPickerViewController {
@@ -62,7 +62,7 @@ struct PhotoLibraryMoviePickerView: UIViewControllerRepresentable {
                             let fileName = "\(Int(Date().timeIntervalSince1970)).\(url.pathExtension)"
                             let newUrl = URL(fileURLWithPath: Utility.SAVE_URL_MOVIE + fileName)
                             try? FileManager.default.copyItem(at: url, to: newUrl)
-                            self.parent.movieUrl.append(newUrl)
+                            self.parent.movieUrl?.append(newUrl)
                             print(self.parent.movieUrl)
                         }
                     }
@@ -74,6 +74,6 @@ struct PhotoLibraryMoviePickerView: UIViewControllerRepresentable {
 
 //struct PhotoLibraryMoviePickerView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        //PhotoLibraryMoviePickerView()
+//        PhotoLibraryMoviePickerView(movieUrl: <#Binding<[URL]>#>)
 //    }
 //}
