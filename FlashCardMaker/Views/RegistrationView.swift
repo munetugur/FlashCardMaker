@@ -11,7 +11,6 @@ import Combine
 struct RegistrationView: View {
     
     
-    @EnvironmentObject private var homeViewModel: HomeViewModel
     private let playDataModel: PlayDataModel = PlayDataModel()
     
     @State public var movieUrl: [URL]?
@@ -45,7 +44,6 @@ struct RegistrationView: View {
                     
                     ///保存ボタン
                     Button("save") {
-                
                         //playDataのデータを格納
                         self.playDataModel.setTitle(title: self.title)
                         self.playDataModel.setSubTitle(subTitle: self.subTitle)

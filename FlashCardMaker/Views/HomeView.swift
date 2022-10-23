@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    
+
     @State private var isSetting: Bool = false
     
     
@@ -30,7 +30,7 @@ struct HomeView: View {
                 
                 ZStack {
                     ///リスト
-                    PlayListView()
+                    PlayListView(playListData: HomeViewModel.shared.playListData)
                     
                     ///フローティングボタン
                     FloatingButtonView(isShow: $isSetting)
@@ -46,17 +46,23 @@ struct HomeView: View {
 
 struct PlayListView: View {
     
+    
+    @ObservedObject public var playListData: HomeViewModel.PlayListData
 
+    
     var body: some View {
      
         ScrollView{
-            ForEach(0..<15  , id: \.self) {_ in
+            
+         
+            ForEach(self.playListData.PlayList(), content: { elem in
+                                
                 Divider()
                 
                 HStack{
-                    NavigationLink(destination: PlayView()) {
+                    NavigationLink(destination: PlayView(playData: elem)) {
                         
-                        PlayDataView()
+                        PlayDataView(playData: elem)
                         
                         Spacer()
                     }
@@ -65,12 +71,17 @@ struct PlayListView: View {
                 .navigationBarHidden(true)
                 .navigationBarTitleDisplayMode(.inline)
                 .foregroundColor(.gray)
-            }
+                
+            })
         }
     }
 }
 
+
 struct PlayDataView: View {
+    
+    
+    @ObservedObject public var playData: PlayDataModel
     
     
     var body: some View {
@@ -83,12 +94,12 @@ struct PlayDataView: View {
             VStack {
                 
                 HStack{
-                    Text("Title........")
+                    Text("\(playData.Title())")
                     Spacer()
                 }
                 
                 HStack{
-                    Text("Explain.----------------")
+                    Text("\(playData.SubTitle())")
                     Spacer()
                 }
             }

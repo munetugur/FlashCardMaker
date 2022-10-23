@@ -61,9 +61,11 @@ struct PhotoLibraryMoviePickerView: UIViewControllerRepresentable {
                         if let url = url {
                             let fileName = "\(Int(Date().timeIntervalSince1970)).\(url.pathExtension)"
                             let newUrl = URL(fileURLWithPath: Utility.SAVE_URL_MOVIE + fileName)
+                            print("fileName: ",fileName)
+                            print("newUrl: ",newUrl)
                             try? FileManager.default.copyItem(at: url, to: newUrl)
                             self.parent.movieUrl?.append(newUrl)
-                            print(self.parent.movieUrl)
+                            print("動画コピー:",self.parent.movieUrl)
                         }
                     }
                 }

@@ -11,7 +11,7 @@ import SwiftUI
 struct FlashCardMakerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(HomeViewModel.shared)
+            ContentView()
         }
     }
 }

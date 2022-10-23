@@ -23,17 +23,13 @@ final class HomeViewModel: ObservableObject {
         /*----------------------------------------------------*/
         
         ///PlayDataをリストで保持
-        private var playList: [PlayDataModel] = []
-        
-        
+        @Published private var playList: [PlayDataModel] = []
+
         /*--------------------------------------------------------------------------------*/
         /*-                                  CLASS 0                                      */
         /*-                                 SUBROUTINE                                    */
         /*--------------------------------------------------------------------------------*/
         
-        private func aaa(){
-        
-        }
         
         public init() { }
         

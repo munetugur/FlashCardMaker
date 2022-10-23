@@ -2,29 +2,33 @@
 
 import Foundation
 
-class PlayDataModel {
+class PlayDataModel: ObservableObject, Identifiable{
     
     
     /*----------------------------------------------------*/
     /*-                  Definition                       */
     /*----------------------------------------------------*/
+
     
+    ///リスト管理のID
+    let id: UUID
     
     ///タイトル
-    private var title: String
+    @Published private var title: String
     
     ///サブタイトル
-    private var subTitle: String?
+    @Published private var subTitle: String?
     
     ///再生スピード
-    private var speed: Double
+    @Published private var speed: Double
     
     ///再生モード
-    private var playMode: Utility.PlayModeKind
+    @Published private var playMode: Utility.PlayModeKind
 
     ///再生動画のURLリスト
-    private var playMovieUrl: [URL]?
+    @Published private var playMovieUrl: [URL]?
     
+
     
     /*--------------------------------------------------------------------------------*/
     /*-                                  CLASS 0                                      */
@@ -48,6 +52,7 @@ class PlayDataModel {
     
     
     public init() {
+        self.id = UUID()
         self.title = ""
         self.subTitle = ""
         self.speed = 1.0

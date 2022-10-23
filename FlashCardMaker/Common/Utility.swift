@@ -3,7 +3,7 @@ import Foundation
 
 class Utility {
     
-    public static let SAVE_URL_MOVIE: String = NSHomeDirectory() + "/Documents/movie/"
+    public static let SAVE_URL_MOVIE: String = NSHomeDirectory() + "/Documents/"
 
     ///再生モードの種類
     public enum PlayModeKind {
